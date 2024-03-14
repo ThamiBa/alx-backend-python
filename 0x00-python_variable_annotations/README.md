@@ -105,3 +105,7 @@ Hint: look into TypeVar
     zoom_3x = zoom_array(array, 3.0)
     ```
     ````
+
+## Authors &copy;
+
+* Thami Baladi
