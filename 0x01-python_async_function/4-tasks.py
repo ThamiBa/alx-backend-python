@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""do not create an async function, use the regular function """
+"""Take the code from wait_n and alter it into a new function task_wait_n"""
 import asyncio
+from typing import List
 
-wait_random = __import__('0-basic_async_syntax').wait_random
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
-def task_wait_random(max_delay: int) -> asyncio.Task:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-    max_delay and returns a asyncio.Task
-    regular function syntax to do this) task_wait_random
+    it into a new function task_wait_n
+    identical to wait_n except task_wait_random
     """
-    return asyncio.create_task(wait_random(max_delay))
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
+    return [await task for task in asyncio.as_completed(tasks)]
