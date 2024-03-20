@@ -5,7 +5,7 @@ import asyncio
 from typing import Generator
 
 
-async def async_generator() -> Generator[float, None, None]: # type: ignore
+async def async_generator() -> Generator[float, None, None]:
     """
     async_generator - function to loop 10 times
      random number between 0 and 10. Use the random module
